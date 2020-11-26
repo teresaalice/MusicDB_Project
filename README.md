@@ -1,14 +1,12 @@
-Design GUI that interfaces with SQL database for library management system
-
                     Community Music Database
 
 This project consists in a database created in MySQL. It also provides a web GUI interface that can be used
-to check specific queries with data within the database. The GUI was programmed using HTML and CSS.
+to check specific queries with data within the database. The GUI was programmed using HTML and CSS(Bootstrap).
 
 Server name: localhost
 Username: root
 Password: root
-Database: community_music_database
+Database: musicdb
 
 The components and the minimum requirements are:
 
