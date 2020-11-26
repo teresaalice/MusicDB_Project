@@ -16,5 +16,9 @@ XAMPP v3.2.4
 
 After installing XAMPP, run the XAMPP Control Panel. Start Apache and MySQL services.
 
-Extract this repository to /xampp/htdocs directory orchange the root folder
+Extract this repository to /xampp/htdocs directory or change the root folder
 in \xampp\apache\conf\httpd.conf to the desired directory.
+
+Acess the database by visiting the following link:
+
+http://localhost/MusicDB_Project/src/
