@@ -1,10 +1,10 @@
 /*  Projection Query  */
 
-SELECT artistID, artistName FROM artist
+SELECT artistID, artistName FROM artist;
 
 /*  Selection Query  */
 
-SELECT artistID, artistName FROM artist WHERE artistName = '$SArtist'
+SELECT artistID, artistName FROM artist WHERE artistName = '$SArtist';
 
 /* Join Query */
 
@@ -12,7 +12,7 @@ SELECT artist.artistName, album.albumTitle, album.releaseYear
 FROM artist 
 INNER JOIN artistAlbums ON artist.artistID=artistalbums.artistID 
 INNER JOIN album ON album.albumID=artistalbums.albumId 
-WHERE artistName = '$SArtist'
+WHERE artistName = '$SArtist';
 
 /* Division Query */
 
@@ -40,7 +40,7 @@ FROM ( SELECT MAX(songNumber)as max FROM albumsongs group by albumId)songs;
 
 /* Delete Query */
 
-DELETE FROM artist WHERE artistname = '$AName'
+DELETE FROM artist WHERE artistname = '$AName';
 
 /* Update Query */
 
