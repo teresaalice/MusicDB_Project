@@ -57,15 +57,35 @@
       </nav>
       <main class="container">
         <br />
-        <p class="font-weight-normal">
-          This project consists in a database created in MySQL. It also provides
-          a web GUI interface that can be used to check specific queries with
-          data within the database. The GUI was programmed using HTML and
-          CSS(Bootstrap).
-        </p>
-        <p class="font-weight-normal">
-          Select the query you want to see in the links above.
-        </p>
+        <h3>Update Album Release Year</h3>
+
+        <form action="Update.php" method="post">
+          <div class="form-group">
+            <label>Album ID</label>
+            <input
+              type="text"
+              name="albumId"
+              class="form-control"
+              style="width: 25%"
+              placeholder="Album ID"
+              required
+            />
+            <label>New Release Year</label>
+            <input
+              type="text"
+              name="releaseYear"
+              class="form-control"
+              style="width: 25%"
+              placeholder="Release Year"
+              required
+            />
+          </div>
+          <input
+            type="submit"
+            value="Update Album"
+            class="btn btn-secondary btn-sm"
+          />
+        </form>
       </main>
     </div>
   </body>

@@ -57,15 +57,25 @@
       </nav>
       <main class="container">
         <br />
-        <p class="font-weight-normal">
-          This project consists in a database created in MySQL. It also provides
-          a web GUI interface that can be used to check specific queries with
-          data within the database. The GUI was programmed using HTML and
-          CSS(Bootstrap).
-        </p>
-        <p class="font-weight-normal">
-          Select the query you want to see in the links above.
-        </p>
+        <h3>Delete Artist</h3>
+        <form action="Delete.php" method="post" class="form-group">
+          <div class="form-group">
+            <label>Artist Name</label>
+            <input
+              type="text"
+              name="artistName"
+              style="width: 25%"
+              class="form-control"
+              placeholder="Artist Name"
+              required
+            />
+          </div>
+          <input
+            type="submit"
+            value="Delete Artist"
+            class="btn btn-secondary btn-sm"
+          />
+        </form>
       </main>
     </div>
   </body>

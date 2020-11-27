@@ -55,17 +55,29 @@
           </li>
         </ul>
       </nav>
-      <main class="container">
+      </main>
+            <main class="container">
         <br />
-        <p class="font-weight-normal">
-          This project consists in a database created in MySQL. It also provides
-          a web GUI interface that can be used to check specific queries with
-          data within the database. The GUI was programmed using HTML and
-          CSS(Bootstrap).
+        <h3>Search Albums by Artist</h3>
+        <p>
+          Search the database for specific artist. Leave blank to see all
+          albums.
         </p>
-        <p class="font-weight-normal">
-          Select the query you want to see in the links above.
-        </p>
+        <form action="Join.php" method="post" class="form-group">
+          <div class="form-group">
+            <label>Artist Name</label>
+            <input type="text" name="artistName"  
+              class="form-control"
+              style="width: 25%"
+              placeholder="Artist Name"
+              />
+          </div>
+          <input
+            type="submit"
+            value="See Albums"
+            class="btn btn-secondary btn-sm"
+          />
+        </form>
       </main>
     </div>
   </body>

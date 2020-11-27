@@ -14,20 +14,39 @@
 </head>
 
 <body>
-    <div id="wrapper">
-        <header>
-            <h1>MusicDB_Project - Join Query</h1>
+    <div id="wrapper" class="container">
+        <header class="page-header">
+            <div class="jumbotron">
+                <h1>MusicDB - Group Project</h1>
+            </div>
         </header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Index</a></li>
-                <li><a href="InsertArtist.html">Insert Artist</a></li>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a href="index.html" class="nav-link">Index</a>
+                </li>
+                <li><a href="Insert.html" class="nav-link">Insert</a></li>
                 <li>
-                    <a href="SearchArtist.html">Search Artist - Select/Projection Query</a>
+                    <a href="Select.html" class="nav-link">Select/Projection</a>
                 </li>
                 <li>
-                    <a href="SearchAlbumByArtist.html">Search Album By Artist - Join Query</a>
+                    <a href="Join.html" class="nav-link">Join</a>
                 </li>
+                <li>
+                    <a href="Division.php" class="nav-link">Division</a>
+                </li>
+                <li>
+                    <a href="Aggregation.php" class="nav-link">Aggregation</a>
+                </li>
+                <li>
+                    <a href="Nested.php" class="nav-link">Nested</a>
+                </li>
+                <li>
+                    <a href="Delete.html" class="nav-link">Delete</a>
+                </li>
+                <li>
+                    <a href="Update.html" class="nav-link">Update</a>
                 </li>
             </ul>
         </nav>
@@ -54,9 +73,9 @@ WHERE artistName = '$SArtist'";
 //Execute the query
 $result = $conn->query($query);
 if ($result->num_rows > 0) {
-    echo "<h1>Album Search Result</h1>";
-    echo "<br /><br />";
-    echo "<table align=\"center\"border= \"1\">";
+    echo "<h3 align=\"center\">Album Search Result</h3>";
+echo "<table class=\"table table-striped\" align=\"center\">";
+
     echo "<tr><th>Artist</th><th>Album Name</th><th>Release Year</th></tr>";
     // output data of each row
     while ($row = $result->fetch_assoc()) {
@@ -64,17 +83,17 @@ if ($result->num_rows > 0) {
     }
     echo "</table>";
 } else {
-    $query = "SELECT artistName, albumName, releaseYear FROM album, artist WHERE album.artistId = artist.artistId";
+    $query = "SELECT artistName, album.albumId, albumTitle, releaseYear FROM album, artist, artistalbums WHERE artistalbums.artistId = artist.artistId and artistalbums.albumId = album.albumID ";
     $result = $conn->query($query);
     if ($result->num_rows > 0) {
-        echo "<h1>Album Search Result</h1>";
-        echo "<br /><br />";
-        echo "<table align=\"center\"border= \"1\">";
-        echo "<tr><th>Album Id</th><th>Album Name</th><th>Release Year</th></tr>";
+        echo "<h3 align=\"center\">Album Search Result</h3>";
+        echo "<table class=\"table table-striped\" align=\"center\">";
+
+        echo "<tr><th>Artist Name</th><th>Album Name</th><th>Release Year</th><th>Album ID</th></tr>";
         // output data of each row
 
         while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . $row["albumId"] . "</td><td> " . $row["albumTitle"] . "</td><td> " . $row["releaseYear"] . "</td></tr>";
+            echo "<tr><td>" . $row["artistName"] . "</td><td> " . $row["albumTitle"] . "</td><td> " . $row["releaseYear"] . "</td><td> " . $row["albumId"] . "</td></tr>";
         }
 
         echo "</table>";
