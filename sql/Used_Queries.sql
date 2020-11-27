@@ -16,25 +16,34 @@ WHERE artistName = '$SArtist'
 
 /* Division Query */
 
-SELECT a.albumname FROM album a
-WHERE albumId NOT IN (
-SELECT albumId FROM (
-(SELECT albumId, labelId FROM (SELECT labelname FROM label WHERE labelname='$LName')
-AS l CROSS JOIN (SELECT DISTINCT essn from works_on) as w)
-EXCEPT (SELECT essn, pno FROM works_on)) AS r );
+SELECT tagName
+FROM tag AS t
+WHERE NOT EXISTS(
+(SELECT a.albumId
+FROM album AS a)
+EXCEPT
+(SELECT atags.albumId FROM albumtags AS atags WHERE atags.tagId = t.tagId));
 
 /* Aggregation Query */
 
 SELECT MIN(releaseYear)
 FROM Album;
 
-SELECT AVERAGE(songNumber)
-from AlbumSongs;
+SELECT MAX(songNumber)
+FROM albumsongs;
+
 
 /* Nested Aggregation with Group-By */
 
-SELECT a.artistName, b.albumTitle, b.releaseYear
-FROM artist a, artistAlbums ab , album b
-WHERE a.artistID=ab.artistID AND b.albumID=ab.albumId IN
-    (SELECT albumId
-    HAVING MIN(b.releaseYear));
+SELECT AVG(songs.max)
+FROM ( SELECT MAX(songNumber)as max FROM albumsongs group by albumId)songs;
+
+/* Delete Query */
+
+DELETE FROM artist WHERE artistname = '$AName'
+
+/* Update Query */
+
+UPDATE album
+SET releaseYear = '$NewYear'
+WHERE albumTitle = '$AName'; 

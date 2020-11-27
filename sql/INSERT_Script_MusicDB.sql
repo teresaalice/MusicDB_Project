@@ -28,6 +28,7 @@ INSERT INTO tag(tagName) VALUES ('chill');
 INSERT INTO tag(tagName) VALUES ('goth');
 INSERT INTO tag(tagName) VALUES ('pop');
 INSERT INTO tag(tagName) VALUES ('soul');
+INSERT INTO tag(tagName) VALUES ('cool');
 
 INSERT INTO roles(roleName) VALUES ('Creator');
 INSERT INTO roles(roleName) VALUES ('Contribuitor');
@@ -216,6 +217,15 @@ INSERT INTO albumTags(tagId, albumId) VALUES (7,4);
 INSERT INTO albumTags(tagId, albumId) VALUES (7,5);
 INSERT INTO albumTags(tagId, albumId) VALUES (7,6);
 INSERT INTO albumTags(tagId, albumId) VALUES (8,7);
+INSERT INTO albumTags(tagId, albumId) VALUES (9,1);
+INSERT INTO albumTags(tagId, albumId) VALUES (9,2);
+INSERT INTO albumTags(tagId, albumId) VALUES (9,3);
+INSERT INTO albumTags(tagId, albumId) VALUES (9,4);
+INSERT INTO albumTags(tagId, albumId) VALUES (9,5);
+INSERT INTO albumTags(tagId, albumId) VALUES (9,6);
+INSERT INTO albumTags(tagId, albumId) VALUES (9,7);
+INSERT INTO albumTags(tagId, albumId) VALUES (9,8);
+INSERT INTO albumTags(tagId, albumId) VALUES (9,9);
 
 INSERT INTO albumLabel(albumId, labelId) VALUES (1,1);
 INSERT INTO albumLabel(albumId, labelId) VALUES (2,2);
@@ -323,3 +333,4 @@ INSERT INTO albumSongs(albumId, songId, songNumber) VALUES (5,68,13);
 INSERT INTO albumSongs(albumId, songId, songNumber) VALUES (5,69,14);
 INSERT INTO albumSongs(albumId, songId, songNumber) VALUES (5,70,15);
 INSERT INTO albumSongs(albumId, songId, songNumber) VALUES (5,71,16);
+
